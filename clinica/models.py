@@ -24,7 +24,7 @@ class Agenda(models.Model):
     horario = models.TimeField(blank=False)
 
     def __str__(self):
-        return self.nome_medico
+        return str(self.data)
 
 
 class Cliente(models.Model):
@@ -39,4 +39,14 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nome
+        
+
+
+class Consulta(models.Model):
+    nome_medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
+    data_agenda = models.ForeignKey(Agenda, on_delete=models.CASCADE)
+    #horario_agenda = models.ForeignKey(Agenda, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nome_medico
 
