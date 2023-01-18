@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework', #novo
-    'clinica', #novo
+    'rest_framework',
+    #'drf_yasg',
+    #'djoser',
+    'clinica',
 ]
 
 MIDDLEWARE = [
@@ -105,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-BR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -123,3 +125,25 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#         # 'rest_framework.authentication.TokenAuthentication',
+#     ],
+# }
+# DJOSER = {
+#     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+#     'PASSWORD_RESET_CONFIRM_RETYPE': True,
+#     'EMAIL': {
+#         'password_reset': 'accounts.email.PasswordResetEmail'
+#     }
+# }
+
+# SIMPLE_JWT = {
+#     "AUTH_HEADER_TYPES": ("Bearer",),
+#     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+#     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+# }

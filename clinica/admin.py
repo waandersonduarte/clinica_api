@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth import admin as admin_add
 from clinica.models import *
 
 class Especialidades(admin.ModelAdmin):
@@ -44,4 +45,15 @@ class Clientes(admin.ModelAdmin):
     list_per_page = 15
     ordering = ('nome',)
 
-admin.site.register(Cliente, Clientes)
+admin.site.register(Cliente, admin_add.UserAdmin)
+
+class Consultas(admin.ModelAdmin):
+    list_display = ('id', 'nome_medico', 'data_agenda')
+    list_display_links = ('id', 'nome_medico')
+    search_fields = ('nome_medico',)
+    list_filter = ('nome_medico',)
+  
+    list_per_page = 15
+    ordering = ('nome_medico',)
+
+admin.site.register(Consulta, Consultas)

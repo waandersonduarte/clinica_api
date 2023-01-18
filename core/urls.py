@@ -18,13 +18,40 @@ from django.urls import path, include
 from rest_framework import routers
 from clinica.views import *
 
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
+
+# schema_view = get_schema_view(
+#     openapi.Info(
+#         title="Snippets API",
+#         default_version='v1',
+#         description="Test description",
+#         terms_of_service="https://www.google.com/policies/terms/",
+#         contact=openapi.Contact(email="contact@snippets.local"),
+#         license=openapi.License(name="BSD License"),
+#     ),
+#     public=True,
+#     permission_classes=(permissions.AllowAny,),
+# )
+
 router = routers.DefaultRouter()
 router.register('especialidades', EspecialidadeViewSet)
 router.register('medicos', MedicoViewSet)
 router.register('agendas', AgendaViewSet)
 router.register('clientes', ClienteViewSet)
+router.register('marcar_consulta', ConsultaViewSet) 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('accounts/', include('django.contrib.auth.urls')),
+    #path('api/v1/movie-examples/', MovieExampleView.as_view()),
+    path('admin/', admin.site.urls),
 ]
+
+# djoser
+# urlpatterns += [
+#     path('api/v1/', include('djoser.urls')),
+#     path('api/v1/auth/', include('djoser.urls.authtoken')),
+#     path('api/v1/auth/', include('djoser.urls.jwt')),
+# ]
