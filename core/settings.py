@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    #'drf_yasg',
-    #'djoser',
     'clinica',
 ]
 
@@ -126,24 +124,3 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         # 'rest_framework_simplejwt.authentication.JWTAuthentication',
-#         'rest_framework.authentication.SessionAuthentication',
-#         # 'rest_framework.authentication.TokenAuthentication',
-#     ],
-# }
-# DJOSER = {
-#     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
-#     'PASSWORD_RESET_CONFIRM_RETYPE': True,
-#     'EMAIL': {
-#         'password_reset': 'accounts.email.PasswordResetEmail'
-#     }
-# }
-
-# SIMPLE_JWT = {
-#     "AUTH_HEADER_TYPES": ("Bearer",),
-#     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
-#     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-# }

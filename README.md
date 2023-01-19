@@ -186,7 +186,7 @@ class ClienteSerializer(serializers.ModelSerializer):
 ```
 
 # Views
-Vamos abrir clinica/views.py no editor de código, apagar tudo dele e escrever o seguinte código:
+Vamos abrir ``clinica/views.py`` no editor de código, apagar tudo dele e escrever o seguinte código:
 ```python
 from rest_framework import viewsets
 from clinica.serializers import *
@@ -239,4 +239,4 @@ python manage.py runserver
 ```
 ```
 http://127.0.0.1:8000/
-``
+```

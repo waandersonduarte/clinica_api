@@ -13,7 +13,6 @@ class EspecialidadeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Especialidade
         fields = '__all__'
-        #fields = ['id', 'nome', 'rg', 'cpf', 'data_nascimento']
 
 
 class MedicoSerializer(serializers.ModelSerializer):
@@ -23,9 +22,6 @@ class MedicoSerializer(serializers.ModelSerializer):
 
 
 class AgendaSerializer(serializers.ModelSerializer):
-    # medico = serializers.ReadOnlyField(source='nome')
-    # data = serializers.SerializerMethodField()
-    # horario = serializers.SerializerMethodField()
     class Meta:
         model = Agenda
         fields = '__all__'
@@ -56,13 +52,11 @@ class ConsultaSerializer(serializers.ModelSerializer):
         model = Consulta
         fields = '__all__'
 
-        def validate(self, data):
-        
-    
-            nome_medico = data['nome_medico']
-            agenda_medico = Consulta.objects.filter(nome_medico__id = nome_medico.id)
+        # def validate(self, data):
+        #     nome_medico = data['nome_medico']
+        #     agenda_medico = Consulta.objects.filter(nome_medico__id = nome_medico.id)
             
-            for agenda in agenda_medico:
-                if data['nome_medico'] != agenda.nome_medico:
-                    raise serializers.ValidationError({'nome_medico': 'Não é possível fazer agendamento com um médico diferente do selecionado!'})               
-            return data
+        #     for agenda in agenda_medico:
+        #         if data['nome_medico'] != agenda.nome_medico:
+        #             raise serializers.ValidationError({'nome_medico': 'Não é possível fazer agendamento com um médico diferente do selecionado!'})               
+        #     return data

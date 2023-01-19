@@ -45,12 +45,11 @@ class Cliente(User):
         return self.nome
         
 
-
 class Consulta(models.Model):
     nome_medico = models.ForeignKey(Medico, on_delete=models.CASCADE, verbose_name='Nome do Médico:')
     data_agenda = models.ForeignKey(Agenda, on_delete=models.CASCADE, verbose_name='Data e Horário:')
-    #horario_agenda = models.ForeignKey(Agenda, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome_medico
+        
 
