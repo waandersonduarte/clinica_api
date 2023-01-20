@@ -178,7 +178,6 @@ class AgendaSerializer(serializers.ModelSerializer):
     def get_periodo(self, obj):
         return obj.get_periodo_display()
 
-
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
