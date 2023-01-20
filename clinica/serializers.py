@@ -51,12 +51,3 @@ class ConsultaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consulta
         fields = '__all__'
-
-        # def validate(self, data):
-        #     nome_medico = data['nome_medico']
-        #     agenda_medico = Consulta.objects.filter(nome_medico__id = nome_medico.id)
-            
-        #     for agenda in agenda_medico:
-        #         if data['nome_medico'] != agenda.nome_medico:
-        #             raise serializers.ValidationError({'nome_medico': 'Não é possível fazer agendamento com um médico diferente do selecionado!'})               
-        #     return data

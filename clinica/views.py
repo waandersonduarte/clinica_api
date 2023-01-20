@@ -1,12 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from rest_framework import viewsets
 from clinica.serializers import *
 from clinica.models import *
-from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
-from rest_framework.authentication import BaseAuthentication, BasicAuthentication, SessionAuthentication
-from django.contrib.auth.forms import UserCreationForm
+from rest_framework.authentication import BaseAuthentication, BasicAuthentication
 
 class EspecialidadeViewSet(viewsets.ModelViewSet):
     queryset = Especialidade.objects.all()

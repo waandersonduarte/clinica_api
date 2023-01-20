@@ -45,7 +45,7 @@ class Clientes(admin.ModelAdmin):
     list_per_page = 15
     ordering = ('nome',)
 
-admin.site.register(Cliente, admin_add.UserAdmin)
+admin.site.register(Cliente, Clientes)
 
 class Consultas(admin.ModelAdmin):
     list_display = ('id', 'nome_medico', 'data_agenda')
