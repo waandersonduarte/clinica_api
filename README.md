@@ -4,13 +4,13 @@ mkdir clinica_api
 cd clinica_api
 ```
 
-# Criando o ambiente virtual
+## Criando o ambiente virtual
 ```
 virtualenv venv
 . venv/bin/activate  
 ```
 
-# Instalando as ferramentas necessárias para nossa aplicação
+## Instalando as ferramentas necessárias para nossa aplicação
 ```
 pip install django
 pip install djangorestframework
@@ -18,13 +18,13 @@ pip install markdown
 pip install django-filter
 ```
 
-# Criando o projeto e a aplicação
+## Criando o projeto e a aplicação
 ```
 django-admin startproject core .  
 django-admin startapp clinica
 ```
 
-# Configurando o settings.py
+## Configurando o settings.py
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-# Criando os modelos para nossa clinica
+## Criando os modelos para nossa clinica
 No arquivo ``clinica/models.py`` definimos todos os objetos chamados Modelos, este é um lugar em que vamos definir os relacionamentos entre as classes que estaram presentes na nossa clinica definidos no nosso diagrama e classes.
 
 Vamos abrir ``clinica/models.py`` no editor de código, apagar tudo dele e escrever o seguinte código:
@@ -102,7 +102,7 @@ Preparar e migrar nossos modelos para a base de dados:
 python manage.py makemigrations
 python manage.py migrate
 ```
-# Admin
+## Admin
 ```
 python manage.py createsuperuser
 ```
@@ -169,7 +169,7 @@ class Consultas(admin.ModelAdmin):
 admin.site.register(Consulta, Consultas)
 ```
 
-# Serializers
+## Serializers
 Iremos criar um arquivo ``clinica/serializers.py``:
 
 ```python
@@ -228,7 +228,7 @@ class ConsultaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 ```
 
-# Views
+## Views
 Vamos abrir ``clinica/views.py`` no editor de código, apagar tudo dele e escrever o seguinte código:
 ```python
 from django.shortcuts import render, redirect
@@ -271,7 +271,7 @@ class ConsultaViewSet(viewsets.ModelViewSet):
     authentication_classes = [BasicAuthentication]
 ```
 
-# Routers
+## Routers
 Vamos editar ``core/urls.py`` no editor de código:
 ```python
 from django.contrib import admin
@@ -292,7 +292,7 @@ urlpatterns = [
 ]
 
 ```
-# Testando a API
+## Testando a API
 Vamos startar o servidor web
 ```
 python manage.py runserver
