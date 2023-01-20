@@ -4,11 +4,11 @@ from rest_framework import routers
 from clinica.views import *
 
 router = routers.DefaultRouter()
-router.register('especialidades', EspecialidadeViewSet)
-router.register('medicos', MedicoViewSet)
-router.register('agendas', AgendaViewSet)
-router.register('clientes', ClienteViewSet)
-router.register('marcar_consulta', ConsultaViewSet) 
+router.register('especialidades', EspecialidadeViewSet, basename='especialidade')
+router.register('medicos', MedicoViewSet, basename='medicos')
+router.register('agendas', AgendaViewSet, basename='agendas')
+router.register('clientes', ClienteViewSet, basename='clientes')
+router.register('marcar_consulta', ConsultaViewSet, basename='marcar_consulta') 
 
 urlpatterns = [
     path('', include(router.urls)),
