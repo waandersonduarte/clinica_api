@@ -1,3 +1,5 @@
+# API - Django Rest Framework
+O Django Rest Framework auxilia na usabilidade do sistema facilitando a manipulação das informações contidas no Banco de Dados. O intuito do projeto é o desenvolvimento de uma API com simulação de uma clinica. Sendo assim, o sistema tem as seguintes funcionalidades: cadastro de especialidades, médicos, agendas, clientes e a possibilidade dos clientes/pacientes marcar consultas de acordo a disponibilidade da agenda dos médicos. O sistema contém as seguintes restrições: Não deve ser possível criar mais de uma agenda para um médico em um mesmo dia e não deve ser possível criar uma agenda para um médico em um dia passado. Além disso, contém sistema de autenticação e serialização dos dados.
 ## Criando o diretório do projeto
 ```
 mkdir clinica_api
