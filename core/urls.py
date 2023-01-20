@@ -4,7 +4,7 @@ from rest_framework import routers
 from clinica.views import *
 
 router = routers.DefaultRouter()
-router.register('especialidades', EspecialidadeViewSet, basename='especialidade')
+router.register('especialidades', EspecialidadeViewSet, basename='especialidades')
 router.register('medicos', MedicoViewSet, basename='medicos')
 router.register('agendas', AgendaViewSet, basename='agendas')
 router.register('clientes', ClienteViewSet, basename='clientes')
