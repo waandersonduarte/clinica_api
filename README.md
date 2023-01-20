@@ -1,4 +1,4 @@
-# Criando o diretório do projeto
+## Criando o diretório do projeto
 ```
 mkdir clinica_api
 cd clinica_api
